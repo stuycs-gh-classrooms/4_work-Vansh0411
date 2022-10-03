@@ -27,3 +27,11 @@ void draw()
     xDir=-xDir;
   }
 }
+void circleRow (int startx, int endx, int y, int d){
+int curx = startx + d/2 ;
+  int cury = y + d/2 ;
+  while (curx, < endx) {
+    circle (curx, cury, d);
+    curx = curx + d ;
+  }
+}

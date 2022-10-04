@@ -1,4 +1,6 @@
 int xPos=200;
+int yPos = 200;
+
 int xDir=1;
 
 void setup()
@@ -13,7 +15,7 @@ void setup()
 void draw()
 {
   background(0);
-  ellipse(xPos, 200, 40, 40);
+  ellipse(xPos, yPos, 40, 40);
   xPos=xPos+xDir;
   if (xPos>width-20 || xPos<20)  
   //circle (00, 1, 100);
@@ -25,13 +27,14 @@ void draw()
   
   {
     xDir=-xDir;
+    yPos -= 100;
   }
 }
-void circleRow (int startx, int endx, int y, int d){
-int curx = startx + d/2 ;
-  int cury = y + d/2 ;
-  while (curx, < endx) {
-    circle (curx, cury, d);
-    curx = curx + d ;
-  }
+
+void circleRow(int startX, int endX, int y, int d){
+  while (startX < endX){
+    int nextX = startX + d;
+    circle(startX, y, d);
+    startX = nextX;
+  } 
 }
